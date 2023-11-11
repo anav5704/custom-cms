@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { StoreModal } from "@/components/modals/StoreModal"
 
-const ModalProvider = () => {
+export const ModalProvider = () => {
     const [isMounted, setIsMounted] = useState(false)
     useEffect(() => {
         setIsMounted(true)
@@ -19,5 +19,3 @@ const ModalProvider = () => {
         </>
     )
 }
-
-export default ModalProvider
