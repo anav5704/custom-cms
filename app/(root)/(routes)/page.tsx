@@ -15,10 +15,5 @@ export default function SetupPage() {
         }
     }, [isOpen, onOpen])
 
-  return (
-    <>
-        <h1>Custom CMS | Protected route</h1>
-        <UserButton afterSignOutUrl='/'/>
-    </>
-  )
+  return null
 }
