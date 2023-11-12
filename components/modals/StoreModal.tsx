@@ -3,7 +3,7 @@
 import * as z from "zod"
 
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { useStoreModal } from "@/hooks/use-store-modal"
+import { useStoreModal } from "@/hooks/useStoreModal"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"

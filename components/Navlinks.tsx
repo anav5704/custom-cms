@@ -13,6 +13,11 @@ export const Navlinks = ({ className, ...props}: React.HtmlHTMLAttributes<HTMLEl
             href: `/${params.storeId}/settings`,
             label: "Settings",
             active: pathName === `/${params.storeId}/settings`
+        },
+        { 
+            href: `/${params.storeId}`,
+            label: "Dashboard",
+            active: pathName === `/${params.storeId}`
         }
     ]
 
@@ -23,7 +28,9 @@ export const Navlinks = ({ className, ...props}: React.HtmlHTMLAttributes<HTMLEl
                 key={route.label} 
                 href={route.href} 
                 className={cn("text-sm font-medium transition-colors hover:text-primary", route.active ? "text-black dark:text-white" : "text-muted-foreground")}
-            />
+            >
+            {route.label}
+            </Link>
         ))}
     </nav>
   )

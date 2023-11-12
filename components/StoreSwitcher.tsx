@@ -3,7 +3,7 @@
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "@/components/ui/command"
 import { Check, ChevronsDown, ChevronsUpDown, PlusCircle, Store } from "lucide-react"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { useStoreModal } from "@/hooks/use-store-modal"
+import { useStoreModal } from "@/hooks/useStoreModal"
 import { useParams, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { store } from "@prisma/client" 

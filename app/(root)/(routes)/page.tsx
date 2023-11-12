@@ -1,6 +1,6 @@
 "use client"
 
-import { useStoreModal } from '@/hooks/use-store-modal'
+import { useStoreModal } from '@/hooks/useStoreModal'
 import { Button } from '@/components/ui/button'
 import { UserButton } from '@clerk/nextjs'
 import { useEffect } from 'react'
