@@ -9,7 +9,7 @@ export async function PATCH(req: Request, { params }: { params: { storeId: strin
         const { name } = body
 
         // Protect the route by throwing error if user does not exist
-        if (!userId) return new NextResponse("Unauthorized", { status: 401 })
+        if (!userId) return new NextResponse("User not authenticated", { status: 401 })
         if (!name) return new NextResponse("Store name is required", { status: 400 })
         if (!params.storeId) return new NextResponse("Store id is required", { status: 400 })
 

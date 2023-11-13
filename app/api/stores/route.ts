@@ -9,7 +9,7 @@ export async function POST(req: Request) {
         const { name } = body
 
         // Protect the route by throwing error if user does not exist
-        if (!userId) return new NextResponse("Unauthorized", { status: 401 })
+        if (!userId) return new NextResponse("User not authenticated", { status: 401 })
         if (!name) return new NextResponse("Store name is required", { status: 400 })
 
         // Create the store

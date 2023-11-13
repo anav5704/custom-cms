@@ -8,7 +8,6 @@ import { ImageUpload } from "@/components/ui/ImageUpload"
 import { useParams, useRouter } from "next/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Separator } from "@/components/ui/separator"
-import { ApiAlert } from "@/components/ui/ApiAlert"
 import { Heading } from "@/components/ui/Heading"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -16,7 +15,6 @@ import { useForm } from "react-hook-form"
 import { billboard } from "@prisma/client"
 import { Trash } from "lucide-react"
 import { useState } from "react"
-import useOrigin from "@/hooks/useOrigin"
 import toast from "react-hot-toast"
 import axios from "axios"
 
@@ -37,7 +35,6 @@ export const BillboardForm = ({ billboard }: billboardFormProps) => {
 
     const params = useParams()
     const router = useRouter()
-    const origin = useOrigin()
 
     const title = billboard ? "Edit Billboard" : "Create Billboard"
     const description = billboard ? "Edit your billboard properties." : "Create a new billboard"
@@ -77,7 +74,7 @@ export const BillboardForm = ({ billboard }: billboardFormProps) => {
             setLoading(true)
             await axios.delete(`/api/${params.storeId}/billboards/${params.billboardId}`)
             router.refresh()
-            router.push("/")
+            router.push(`/${params.storeId}/billboards`)
             toast.success("Billboard was successfully deleted!")
         } catch (error) {
             toast.error("Make sure your billboard is empty  .")
@@ -132,7 +129,6 @@ export const BillboardForm = ({ billboard }: billboardFormProps) => {
                     </Button>
                 </form>
             </Form>
-            <Separator />
         </>
     )
 }
