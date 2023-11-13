@@ -53,7 +53,7 @@ export const BillboardForm = ({ billboard }: billboardFormProps) => {
         }
     })
 
-    const handleSubmit = async (data: billboardFormValues) => {
+    const onSubmit = async (data: billboardFormValues) => {
         try {
             setLoading(true)
             if (billboard) {
@@ -63,6 +63,7 @@ export const BillboardForm = ({ billboard }: billboardFormProps) => {
                 await axios.post(`/api/${params.storeId}/billboards`, data)
             }
             router.refresh()
+            router.push(`/${params.storeId}/billboards`)
             toast.success(toastMessage)
         } catch (error) {
             toast.error("Oops, something went wrong!")
@@ -98,7 +99,7 @@ export const BillboardForm = ({ billboard }: billboardFormProps) => {
             </div>
             <Separator />
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8 w-full">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
                     <FormField control={form.control} name="imageUrl" render={({ field }) => (
                         <FormItem>
                             <FormLabel>Background Image</FormLabel>
