@@ -61,10 +61,9 @@ export const SettingsForm = ({ store }: SettingsFormProps) => {
             await axios.delete(`/api/stores/${params.storeId}`)
             router.refresh()
             router.push("/")
-            toast.success("Store was successfully updated!")
-
+            toast.success("Store was successfully deleted!")
         } catch (error) {
-            toast.error("Make sure you have emptied your store.")
+            toast.error("Make sure your store is empty.")
         } finally {
             setLoading(false)
             setOpen(false)
@@ -92,7 +91,8 @@ export const SettingsForm = ({ store }: SettingsFormProps) => {
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
-                        )} />
+                        )} 
+                        />
                     </div>
                     <Button disabled={loading} type="submit" className="ml-auto">
                         Save changes

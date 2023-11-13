@@ -22,7 +22,7 @@ export default async function settingsPage ({ params }: settingsPageProps) {
     if(!store) redirect("/")
 
     return (
-        <div className="flex-col p-4">
+        <div className="flex-1 space-y-4 p-8 pt-6">
             <SettingsForm store={store}/>
         </div>
     )
