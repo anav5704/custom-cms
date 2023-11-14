@@ -6,7 +6,7 @@ export async function GET(req: Request, { params }: { params: { billboardId: str
     try {
         if (!params.billboardId) return new NextResponse("Billboard id is requried", { status: 400 })
 
-        // Delete the billboard
+        // Get the billboard
         const billboard = await prismadb.billboard.findUnique({
             where: {
                id: params.billboardId

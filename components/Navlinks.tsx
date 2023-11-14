@@ -20,6 +20,11 @@ export const Navlinks = ({ className, ...props}: React.HtmlHTMLAttributes<HTMLEl
             active: pathName === `/${params.storeId}/billboards`
         },
         { 
+            href: `/${params.storeId}/categories`,
+            label: "Categories",
+            active: pathName === `/${params.storeId}/categories`
+        },
+        { 
             href: `/${params.storeId}/settings`,
             label: "Settings",
             active: pathName === `/${params.storeId}/settings`
