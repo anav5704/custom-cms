@@ -5,13 +5,13 @@ import { AlertModal } from "@/components/modals/AlertModal"
 import { useParams, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { MoreHorizontal } from "lucide-react"
-import { BillboardColumn } from "./Columns"
+import { SizeColumn } from "./Columns"
 import { useState } from "react"
 import toast from "react-hot-toast"
 import axios from "axios"
 
 interface CellActionProps {
-    data: BillboardColumn
+    data: SizeColumn
 }
 
 export const CellAction = ({ data }: CellActionProps) => {
@@ -23,17 +23,17 @@ export const CellAction = ({ data }: CellActionProps) => {
 
     const onCopy = (id: string) => {
         navigator.clipboard.writeText(id)
-        toast.success("Billboard Id copied to clipboard!")
+        toast.success("Size Id copied to clipboard!")
     }
 
     const onDelete = async () => {
         try {
             setLoading(true)
-            await axios.delete(`/api/${params.storeId}/billboards/${data.id}`)
+            await axios.delete(`/api/${params.storeId}/sizes/${data.id}`)
             router.refresh()
-            toast.success("Billboard was successfully deleted!")
+            toast.success("Size was successfully deleted!")
         } catch (error) {
-            toast.error("Make sure your billboard is empty.")
+            toast.error("Make sure your size is empty.")
         } finally {
             setLoading(false)
             setOpen(false)
@@ -53,7 +53,7 @@ export const CellAction = ({ data }: CellActionProps) => {
                 <DropdownMenuContent align="end">
                     <DropdownMenuLabel>Actions</DropdownMenuLabel>
                     <DropdownMenuItem onClick={() => onCopy(data.id)}>Copy Id</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => router.push(`/${params.storeId}/billboards/${data.id}`)}>Update</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => router.push(`/${params.storeId}/sizes/${data.id}`)}>Update</DropdownMenuItem>
                     <DropdownMenuItem onClick={() => setOpen(true)}><span className="text-red-500">Delete</span></DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
