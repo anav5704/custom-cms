@@ -77,7 +77,7 @@ export const BillboardForm = ({ billboard }: billboardFormProps) => {
             router.push(`/${params.storeId}/billboards`)
             toast.success("Billboard was successfully deleted!")
         } catch (error) {
-            toast.error("Make sure your billboard is empty  .")
+            toast.error("Make sure your billboard is empty.")
         } finally {
             setLoading(false)
             setOpen(false)
