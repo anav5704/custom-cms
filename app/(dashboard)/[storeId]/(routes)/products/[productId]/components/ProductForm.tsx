@@ -234,8 +234,10 @@ export const ProductForm = ({ product, categories, sizes, colors }: ProductFormP
                                 <FormControl>
                                     <Checkbox 
                                         checked={field.value}
+                                        // @ts-ignore
                                         onCheckedChange={field.onChange}
                                     />
+                                </FormControl>
                                     <div className="space-y-1 leading-none">
                                         <FormLabel>
                                             Featured
@@ -244,7 +246,6 @@ export const ProductForm = ({ product, categories, sizes, colors }: ProductFormP
                                             This product will appear on the home page.
                                         </FormDescription>
                                     </div>
-                                </FormControl>
                             </FormItem>
                         )}
                         />
@@ -253,8 +254,10 @@ export const ProductForm = ({ product, categories, sizes, colors }: ProductFormP
                                 <FormControl>
                                     <Checkbox 
                                         checked={field.value}
+                                        // @ts-ignore
                                         onCheckedChange={field.onChange}
                                     />
+                                </FormControl>
                                     <div className="space-y-1 leading-none">
                                         <FormLabel>
                                             Archived
@@ -263,7 +266,6 @@ export const ProductForm = ({ product, categories, sizes, colors }: ProductFormP
                                             This product will not appear in the store.
                                         </FormDescription>
                                     </div>
-                                </FormControl>
                             </FormItem>
                         )}
                         />
