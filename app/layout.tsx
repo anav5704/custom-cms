@@ -8,7 +8,7 @@ import { ToasterProvider } from '@/providers/ToastPrpvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-    title: 'Custom CMS',
+    title: 'E-commerce CMS',
     description: 'This is a custom build content management system made to manage the ecommerse website I had made.',
 }
 

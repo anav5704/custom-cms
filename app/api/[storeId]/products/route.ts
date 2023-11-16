@@ -7,6 +7,7 @@ export async function POST(req: Request, { params }: { params: { storeId: string
         const body = await req.json()
         const { userId } = auth()
         const { name, price, categoryId, sizeId, colorId, images, isFeatured, isArchived } = body
+        console.log(name, price, categoryId, sizeId, colorId, images, isFeatured, isArchived)
 
         // Protect the route by throwing error if user does not exist
         if (!userId) return new NextResponse("User not authenticated", { status: 401 })
@@ -17,8 +18,6 @@ export async function POST(req: Request, { params }: { params: { storeId: string
         if (!sizeId) return new NextResponse("Product size id is required", { status: 400 })
         if (!colorId) return new NextResponse("Product color id is required", { status: 400 })
         if (!images || !images.length) return new NextResponse("Product image(s) is required", { status: 400 })
-        if (!isFeatured) return new NextResponse("Product feature state is required", { status: 400 })
-        if (!isArchived) return new NextResponse("Product archive state is required", { status: 400 })
 
         // Check if user has owns store of id passed in params
         const userOwnsStore = await prismadb.store.findFirst({

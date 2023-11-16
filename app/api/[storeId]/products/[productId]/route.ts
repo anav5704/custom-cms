@@ -42,8 +42,6 @@ export async function PATCH(req: Request, { params }: { params: { storeId: strin
         if (!sizeId) return new NextResponse("Product size id is required", { status: 400 })
         if (!colorId) return new NextResponse("Product color id is required", { status: 400 })
         if (!images || !images.length) return new NextResponse("Product image(s) is required", { status: 400 })
-        if (!isFeatured) return new NextResponse("Product feature state is required", { status: 400 })
-        if (!isArchived) return new NextResponse("Product archive state is required", { status: 400 })
 
         // Check if user has owns store of id passed in params
         const userOwnsStore = await prismadb.store.findFirst({
