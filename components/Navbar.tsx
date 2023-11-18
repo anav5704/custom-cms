@@ -2,6 +2,7 @@ import { StoreSwitcher } from '@/components/StoreSwitcher'
 import { Navlinks } from '@/components/Navlinks'
 import { UserButton, auth } from '@clerk/nextjs'
 import { redirect } from 'next/navigation'
+import { ThemeToggle } from './ThemeToggle'
 import prismadb from '@/lib/prismadb'
 
 const Navbar = async () => {
@@ -24,6 +25,7 @@ const Navbar = async () => {
                 <Navlinks className='mx-6'/>
 
                 <div className="ml-auto flex items-center space-x-4">
+                    <ThemeToggle />
                     <UserButton afterSignOutUrl='/' />
                 </div>
 
