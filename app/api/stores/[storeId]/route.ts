@@ -34,7 +34,6 @@ export async function PATCH(req: Request, { params }: { params: { storeId: strin
 
 export async function DELETE(req: Request, { params }: { params: { storeId: string } }) {
     try {
-        const body = await req.json()
         const { userId } = auth()
 
         // Protect the route by throwing error if user does not exist
@@ -51,8 +50,8 @@ export async function DELETE(req: Request, { params }: { params: { storeId: stri
 
         return NextResponse.json(store)
 
-    } catch (error) {
-        console.log("STORE_DELETE", error)
+    } catch (error: any) {
+        console.log("STORE_DELETE", error.message || error);        
         return new NextResponse("Internal error", { status: 500 })
     }
 }

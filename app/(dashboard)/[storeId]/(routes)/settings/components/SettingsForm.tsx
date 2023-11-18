@@ -64,6 +64,7 @@ export const SettingsForm = ({ store }: SettingsFormProps) => {
             toast.success("Store was successfully deleted!")
         } catch (error) {
             toast.error("Make sure your store is empty.")
+            console.log(error)
         } finally {
             setLoading(false)
             setOpen(false)

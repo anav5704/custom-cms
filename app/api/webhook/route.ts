@@ -25,7 +25,7 @@ export async function POST(req: Request){
     const addressComponents = [
         address?.city,
         address?.country,
-        address?.line1,
+        // address?.line1,
         // address?.line2,
         // address?.state,
         // address?.postal_code,
