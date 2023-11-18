@@ -8,7 +8,6 @@ import { Separator } from "@/components/ui/separator"
 import { Heading } from "@/components/ui/Heading"
 import { Overview } from "@/components/Overview"
 import { formatter } from "@/lib/utils"
-import prismadb from "@/lib/prismadb"
 
 interface DashboardPageProps {
     params: { storeId: string }
@@ -68,12 +67,12 @@ const DashboardPage = async ({ params }: DashboardPageProps) => {
                 </div>
                 <Card className="col-span-4">
                     <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2">
-                        <CardTitle>Overview</CardTitle>
-                        <CardContent className="pl-2">
-                            <Overview data={graphReveue} />
-                        </CardContent>
+                        <CardTitle className="mb-3">Overview</CardTitle>
                     </CardHeader>
-                </Card>
+                    <CardContent className="pl-2">
+                        <Overview data={graphReveue} />
+                    </CardContent>
+            </Card>
             </div>
         </div>
     )
