@@ -17,7 +17,7 @@ This is a CMS that acts as an [admin panel](https://ecommerce-custom-cms.vercel.
 - Stripe
 
 ## Getting Started
-As per usual, fork and clone this repo and run ```npm install ``` to download all the dependencies. Now set up the environment variables. The following will go in a ```.env``` in the root of your project.
+As per usual, fork and clone this repo and run ```npm install``` to download all the dependencies. Now set up the environment variables. The following will go in a ```.env``` in the root of your project.
 ```
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY 
 CLERK_SECRET_KEY
@@ -31,3 +31,4 @@ NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
 STRIPE_API_KEY
 FRONTEND_STORE_URL
 ```
+Once set, you can run ```npm run dev``` to see it live on your localhost.
